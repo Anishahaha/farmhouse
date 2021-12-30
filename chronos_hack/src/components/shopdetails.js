@@ -3,11 +3,10 @@ import logo from '../assets/logo.png'
 
 import './details.css'
 import { useHistory } from 'react-router'
-export default function PostDetails() {
+export default function ShopDetails() {
     const history = useHistory()
-    const index = history.location.state?history.location.state.index:0;
     return (
-        <div className='details_root'>
+        <div className='details_root' >
             <div id='nav-bar' className='nav-bar'
         >
         <div className="logo">
@@ -17,6 +16,7 @@ export default function PostDetails() {
         <div  className='nav-links'>
       
            
+            <a  href="/shop" >Home</a>
             <a  href="/home" >Logout</a>
 
         </div>
@@ -29,19 +29,19 @@ export default function PostDetails() {
                 marginBottom:'5rem'
             }} >Order details</p>
             <div className="amazon">
-                <img src="https://images.unsplash.com/photo-1604752466548-d452d280fd7a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1172&q=80" alt="" />
+                <img src="https://m.media-amazon.com/images/I/51P1vHcDqbL._SL1200_.jpg" alt="" />
             <div className="amazon-det">
             
             <div className="details">
-                <span>Potatoes</span>
+                <span>Fertilizer</span>
                 <span>Price : <p style={{
                     marginTop:'0.3rem',
                     marginBottom:'0.5rem'
-                }} > ₹10,000/-</p></span>
+                }} > ₹500/-</p></span>
                 <span>Quantity : <p style={{
                     marginTop:'0.3rem',
                     marginBottom:'0.5rem'
-                }} > 1000 kgs</p></span>
+                }} > 1</p></span>
                 <span>Name : 
                 <p style={{
                     marginTop:'0.3rem',
@@ -61,28 +61,24 @@ export default function PostDetails() {
             </div>
             </div>
             <div className="buttons">
-            <button onClick={()=>{
+            <button  onClick={()=>{
                 history.goBack()
-            }} className='btn' >Back   </button>
+            }}  >Back   </button>
 
-            <button className='btn' onClick={()=>
-            {
-                const r = localStorage.getItem('items')
-                if(r){
-                    const rrr = localStorage.getItem('items-b');
-                    const r1 = JSON.parse(rrr)
-                    const d1 = JSON.parse(r)
-                    const dd = d1[index]
-                    r1.push(dd)
-                    let d = [...d1]
-                    d.splice(index,1)
-                    localStorage.setItem('items-b',JSON.stringify(r1))
-                    localStorage.setItem('items',JSON.stringify(d))
-                }
-            }
-            } >Purchase</button>
+            <button  >Purchase</button>
             </div>
-            
+            <p style={{
+                textAlign:'center',
+                marginTop: '3rem',
+                fontSize: '2rem'
+            }}>Reviews</p>
+            <div className="review">
+            <span style = {{
+                fontSize: '1.5rem'
+            }}> Revanth</span>
+                <p>Using this product earned me a great profit in the previous yield cycle</p>
+            </div>
+
         </div>
     )
 }
