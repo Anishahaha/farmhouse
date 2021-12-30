@@ -16,7 +16,7 @@ export default function Features() {
             }} >Farmhouse provides </p>
             <div className="feature">
                 <div className="single-feature">
-                    <span>Feature 1</span>
+                    <span></span>
                     <span>Something idk here</span>
                 </div>
                 <div className="single-feature">
